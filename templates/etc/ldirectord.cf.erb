@@ -1,0 +1,16 @@
+# Global Directives
+checktimeout=3
+checkinterval=10
+autoreload=yes
+quiescent=no
+
+<% for member in members -%>
+virtual=<%= member['virtual_ip'] -%>:<%= member['port'] %>
+<% member['backends'].each do |backend| -%>
+       real=<%= backend['ipaddress'] -%>:<%= member['port'] -%> <%= member['forwarding_method'] %>
+<% end -%>
+       scheduler=<%= member['scheduler'] %>
+       protocol=<%= member['protocol'] %>
+       checktype=<%= member['checktype'] %>
+       failurecount=<%= member['failurecount'] %>
+<% end %>
