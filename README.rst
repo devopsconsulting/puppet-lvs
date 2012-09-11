@@ -75,5 +75,12 @@ member would be much easier:
    $webservers = servers_with_role('webserver')
    $socketservers = servers_with_role('socketservers')
 
+.. _lvs_template:
+
+Here's what the ldirectord template looks like:
+
+.. literalinclude:: ../modules/lvs/templates/etc/ldirectord.cf.erb
+   :language: bash
+
 More info on the ``ldirectord`` configuration syntax can be found at
 `the ldirectord man page <http://pwet.fr/man/linux/administration_systeme/ldirectord>`_
